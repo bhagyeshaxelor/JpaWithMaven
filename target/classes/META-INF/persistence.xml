@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+    version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+    <persistence-unit name="persistenceUnit"
+        transaction-type="RESOURCE_LOCAL">
+
+        <class>net.axelor.domain.Employee</class>
+        <class>net.axelor.domain.Department</class>
+        <properties>
+
+           <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/mydb" />
+            <property name="javax.persistence.jdbc.user" value="axelor" />
+            <property name="javax.persistence.jdbc.password" value="123456" />
+            <property name="hbm2ddl.auto" value="create" />
+
+          <property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
+			<property name="hibernate.connection.charSet" value="UTF-8"/>
+           	<property name="hibernate.max_fetch_depth" value="3"/>
+			<property name="hibernate.id.new_generator_mappings" value="true" />
+			<property name="hibernate.jdbc.batch_size" value="20"/>
+			<property name="hibernate.show_sql" value="false"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>
